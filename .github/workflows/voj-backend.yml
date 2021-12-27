@@ -26,13 +26,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: clone
-      - run: git clone https://github.com/crarch/voj-backend
+        run: git clone https://github.com/crarch/voj-backend
 
       
       - name: cargo test
         uses: docker://rust:latest
         with:
-          args: /bin/bash voj-backend/ci/build.sh 
+          args: /bin/bash -c "cd voj-backend && bash ci/build.sh" 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
