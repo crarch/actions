@@ -24,11 +24,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: clone
+      - run: git clone https://github.com/crarch/voj-backend
+
       
       - name: cargo test
         uses: docker://rust:latest
         with:
-          args: git clone https://github.com/crarch/voj-backend && bash voj-backend/ci/build.sh 
+          args: bash voj-backend/ci/build.sh 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
