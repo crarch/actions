@@ -27,6 +27,8 @@ jobs:
       
       - name: cargo test
         uses: docker://rust:latest
+        with:
+          args: cargo --version
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
