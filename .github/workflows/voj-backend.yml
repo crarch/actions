@@ -23,6 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repo content               # fetch the contents of the repository
+        uses: actions/checkout@v2
       - name: test 
         uses: docker://hilaolu/sbt:zulu-11 
 
