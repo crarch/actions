@@ -32,7 +32,7 @@ jobs:
       - name: cargo test
         uses: docker://rust:latest
         with:
-          args: bash voj-backend/ci/build.sh 
+          args: /bin/bash voj-backend/ci/build.sh 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
