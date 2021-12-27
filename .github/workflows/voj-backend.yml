@@ -26,8 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: clone
-        run: git clone https://github.com/crarch/voj-backend.git
-
+        run: |
+          git clone https://github.com/crarch/voj-backend.git
+          git rev-parse HEAD
       
       - name: cargo test
         uses: docker://rust:latest
