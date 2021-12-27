@@ -28,7 +28,7 @@ jobs:
       - name: cargo test
         uses: docker://rust:latest
         with:
-          args: cargo --version
+          args: bash /github/workspace/voj-backend.sh 
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
